@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/front', function () {
-    return view('front.home');
+    return view('front.home')->name('user.front');
 });
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
